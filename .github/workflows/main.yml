@@ -31,23 +31,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Dump contents of directory
-        run: |
-          pwd
-          ls -la
-        
       - name: Dump nvm version
         run: |
-          pwd
-          env
-          export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          env
-          nvm ls
-        
-      - name: Set node version
-        run: nvm use
+          pwd \
+          && env \
+          && export NVM_DIR="$HOME/.nvm" \
+          && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
+          && env \
+          && nvm ls
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
