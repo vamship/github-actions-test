@@ -35,6 +35,9 @@ jobs:
         run: |
           set +x \
           && pwd \
+          && mkdir -p /root/test \
+          && cd /root/test \
+          && pwd \
           && export NVM_DIR="$HOME/.nvm" \
           && echo "Sourcing nvm.sh" \
           && cat /root/.nvm/nvm.sh \
