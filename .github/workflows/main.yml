@@ -36,7 +36,7 @@ jobs:
           pwd \
           && export NVM_DIR="$HOME/.nvm" \
           && env \
-          && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
+          && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" \
           && env
 
       # Runs a set of commands using the runners shell
