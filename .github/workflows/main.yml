@@ -12,8 +12,6 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-env:
-  NVM_DIR: "$HOME/.nvm"
   
 defaults:
   run:
@@ -38,7 +36,11 @@ jobs:
         run: ls -la
         
       - name: Dump nvm version
-        run: nvm ls
+        run: |
+          env
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm ls
         
       - name: Set node version
         run: nvm use
