@@ -15,7 +15,7 @@ on:
   
 defaults:
   run:
-    shell: bash
+    shell: bash -leo pipefail {0}
     working-directory: /root
 env:
   HOME: /root
@@ -35,13 +35,10 @@ jobs:
 
       - name: Dump nvm version
         run: |
-          pwd
-          env
-          cp /root/.nvmrc /
           echo ${HOME}
-          export NVM_DIR="/root/.nvm"
-          echo "Sourcing nvm.sh"
-          . "/root/.nvm/nvm.sh" || echo "ERR: $?"
+          pwd
+          cp /root/.nvmrc /
+          env
           echo "Printing current node version"
           nvm current || echo "ERR: $?"
           echo "Switching to default nvm version"
