@@ -40,8 +40,7 @@ jobs:
           && pwd \
           && export NVM_DIR="$HOME/.nvm" \
           && echo "Sourcing nvm.sh" \
-          && cat /root/.nvm/nvm.sh \
-          && source "/root/.nvm/nvm.sh" \
+          && source "/root/.nvm/nvm.sh" || echo $? \
           && env
 
       # Runs a set of commands using the runners shell
