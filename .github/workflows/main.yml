@@ -34,7 +34,7 @@ jobs:
       - name: Dump nvm version
         run: |
           pwd
-          cp /root/.nvmrc .
+          cp /root/.nvmrc /
           export NVM_DIR="$HOME/.nvm"
           echo "Sourcing nvm.sh"
           . "/root/.nvm/nvm.sh" || echo "ERR: $?"
