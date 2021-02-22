@@ -34,6 +34,7 @@ jobs:
       - name: Dump nvm version
         run: |
           pwd
+          env
           cp /root/.nvmrc /
           echo ${HOME}
           export NVM_DIR="/root/.nvm"
