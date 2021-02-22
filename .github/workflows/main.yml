@@ -36,6 +36,8 @@ jobs:
           set +x \
           && pwd \
           && export NVM_DIR="$HOME/.nvm" \
+          && echo "Sourcing nvm.sh" \
+          && cat /root/.nvm/nvm.sh \
           && source "/root/.nvm/nvm.sh" \
           && env
 
